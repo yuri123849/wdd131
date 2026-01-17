@@ -1,7 +1,7 @@
 @media (min-width: 740px) {
     .gallery {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
         max-width: 1000px;
         margin: 0px auto;
