@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chin Xu Yi">
+    <meta name="description" content="Malaysia country page with wheather and data about malaysia.">
+    <title>Malaysia Country Page</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Happy+Monkey&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/malaysia_large.webp" media="(min-width: 1000px)">
+                <source srcset="images/malaysia_medium.webp" media="(min-width: 500px)">
+                <img src="images/malaysia_small.webp" alt="Malaysia Kuala Lumpur city">
+            </picture>
+
+            <h1 class="title">MALAYSIA</h1>
+
+            <div class="overlay">
+                <section class="data">
+                    <h2>Malaysia Data</h2>
+                    <div class="data-grid">
+                        <p><strong>Area </strong> 330,803 sq km</p>
+                        <p><strong>Population </strong> 33,000,000+</p>
+                        <p><strong>Capital </strong> Kuala Lumpur</p>
+                        <p><strong>Languages </strong> Malay, English, Chinese, Indian</p>
+                        <p><strong>Currency </strong> Malaysian Ringgit (MYR)</p>
+                        <p><strong>Time Zone </strong> UTC+8</p>
+                        <p><strong>Calling Code </strong> +60</p>
+                        <p><strong>Internet TLD </strong> .my</p>
+                    </div>
+                </section>
+
+                <section class="weather">
+                    <h2 class="weather_icon">Weather</h2>
+                    <p><strong>Temperature </strong><span id="temp">28</span> °C</p>
+                    <p><strong>Conditions </strong><span id="condition">Partly Cloudy</span></p>
+                    <p><strong>Wind </strong><span id="wind">10</span> km/h</p>
+                    <p><strong>Wind Chill </strong><span id="wind_chill">N/A</span> °C</p>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span>✨ Chin Xu Yi ✨ Malaysia ✨</p>
+        <p id="lastModified"></p>
+    </footer>
+
+
+</body>
+
+</html>
