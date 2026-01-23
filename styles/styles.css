@@ -82,6 +82,7 @@ main {
     color: var(--color-text);
     display: flex;
     flex-direction: column;
+    margin-left: 0;
 }
 
 .weather {
@@ -96,6 +97,7 @@ main {
     color: var(--color-text);
     display: flex;
     flex-direction: column;
+    margin-right: 0;
 }
 
 .weather_icon::before {
@@ -123,14 +125,6 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle;
-}
-
-.data {
-    margin-left: 0;
-}
-
-.weather {
-    margin-right: 0;
 }
 
 .data strong,
