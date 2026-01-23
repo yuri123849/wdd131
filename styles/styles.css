@@ -111,8 +111,26 @@ main {
     vertical-align: middle;
 }
 
+.weather_icon::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    padding-left: 10px;
+    background-image: url("../images/weather.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
 .data {
     margin-left: 0;
+}
+
+.weather {
+    margin-right: 0;
 }
 
 .data strong,
@@ -123,10 +141,6 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-}
-
-.weather {
-    margin-right: 0;
 }
 
 .data h2,
