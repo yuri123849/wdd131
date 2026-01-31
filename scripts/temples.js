@@ -78,7 +78,7 @@ const temples = [
     dedicated: "2023, October, 22",
     area: 48525,
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/43/LDS_Church%27s_Bangkok_Thailand_Temple_seen_from_expressway_Nov_2023.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/bangkok-thailand-temple/bangkok-thailand-temple-40037-main.jpg"
   },
   {
     templeName: "Tokyo Japan Temple",
@@ -86,7 +86,7 @@ const temples = [
     dedicated: "1980, October, 27",
     area: 52700,
     imageUrl:
-      "https://www.churchofjesuschrist.org/media/image/20230509_014042_LES_Exterior_0177.-3eee67f?lang=eng"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyidSOqqnt-iU7GHyxJDZNumVD1YQIhSq_dw&s"
   },
   {
     templeName: "Osaka Japan Temple",
