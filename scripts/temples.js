@@ -86,7 +86,7 @@ const temples = [
     dedicated: "1980, October, 27",
     area: 52700,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340-main.jpg"
+      "https://tokyojapantemple.jp/wp-content/uploads/2022/04/about_history-scaled.jpeg"
   },
   {
     templeName: "Osaka Japan Temple",
