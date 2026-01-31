@@ -78,7 +78,7 @@ const temples = [
     dedicated: "2023, October, 22",
     area: 48525,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bangkok-thailand/400x250/bangkok-thailand-temple.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/bangkok-thailand-temple/bangkok-thailand-temple-40037-main.jpg"
   },
   {
     templeName: "Tokyo Japan Temple",
@@ -86,7 +86,7 @@ const temples = [
     dedicated: "1980, October, 27",
     area: 52700,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-japan-temple.jpg"
+      "https://tokyojapantemple.jp/wp-content/uploads/2022/04/about_history-scaled.jpeg"
   },
   {
     templeName: "Osaka Japan Temple",
@@ -123,7 +123,9 @@ function displayTemples(temples) {
 
     img.src = temple.imageUrl;
     img.alt = temple.templeName;
-    img.loading = "lazy"
+    img.loading = "lazy";
+    img.width = 400;
+    img.height = 250;
 
     card.appendChild(name);
     card.appendChild(location);
