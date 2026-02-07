@@ -23,14 +23,11 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const form = document.getElementById("reviewForm");
   if(form){
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
+    form.addEventListener("submit", function() {
 
       let count = parseInt(localStorage.getItem("ReviewCount")) || 0;
       count++;
       localStorage.setItem("ReviewCount", count);
-
-      window.location.href = "review.html";
     });
   }
 
