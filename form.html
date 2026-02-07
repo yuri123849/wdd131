@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Chin Xu Yi">
     <meta name="description" content="This is a product review form, where users can submit their reviews for various products.">
-    <link rel="stylesheet" href="style/styles.css">
-    <script defer src="script/script.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,11 +24,12 @@
         
         <form id="reviewForm" action="review.html" method="get">
         <fieldset>
-            <label>Product Name</label><br>
-            <select id="product" name="product" required>
+            <label for="product" id="productLabel">Product Name</label>
+            <select id="product" name="product" required aria-labelledby="productLabel">
                 <option value="" disabled selected>Select a Product ...</option>
             </select>
         </fieldset>
+
 
         <fieldset>
     <label>Product Rating</label><br>
