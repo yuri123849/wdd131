@@ -1,5 +1,7 @@
 
-document.addEventListener('DOMContentLoaded', function() {
+
+
+document.addEventListener('DOMContentLoaded', function () {
 
     initLazyLoading();
 
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             body.classList.toggle('menu-open');
@@ -16,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 body.classList.remove('menu-open');
             });
         });
 
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const isClickInsideNav = navMenu.contains(event.target);
             const isClickOnHamburger = hamburger.contains(event.target);
 
@@ -34,99 +36,57 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+const contactForm = document.getElementById('contactForm');
 
-    
-    const contactForm = document.getElementById('contactForm');
-    
     if (contactForm) {
-      
         loadFormData();
-        
-     
+
         const formInputs = contactForm.querySelectorAll('input, select, textarea');
         formInputs.forEach(input => {
             input.addEventListener('input', saveFormData);
         });
-        
 
         contactForm.addEventListener('submit', handleFormSubmit);
     }
-});
 
 
-function saveFormData() {
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        belt: document.getElementById('belt').value,
-        message: document.getElementById('message').value,
-        timestamp: new Date().toISOString()
-    };
-    
-    localStorage.setItem('contactFormData', JSON.stringify(formData));
-}
+ const formsGrid = document.getElementById('formsGrid');
 
+    if (formsGrid) {
 
-function loadFormData() {
-    const savedData = localStorage.getItem('contactFormData');
-    
-    if (savedData) {
-        const formData = JSON.parse(savedData);
-        
- 
-        if (formData.name) document.getElementById('name').value = formData.name;
-        if (formData.email) document.getElementById('email').value = formData.email;
-        if (formData.belt) document.getElementById('belt').value = formData.belt;
-        if (formData.message) document.getElementById('message').value = formData.message;
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function (e) {
+                searchQuery = e.target.value.toLowerCase();
+                displayForms();
+            });
+        }
+
+        const fedButtons = document.querySelectorAll('.fed-btn');
+        fedButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                fedButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFederation = this.dataset.fed;
+                displayForms();
+            });
+        });
+
+        const beltButtons = document.querySelectorAll('.belt-btn');
+        beltButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                beltButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentBelt = this.dataset.belt;
+                displayForms();
+            });
+        });
+
+        displayForms(); // ONLY runs if formsGrid exists
     }
-}
 
-
-function handleFormSubmit(event) {
-    event.preventDefault();
-    
-
-    const submission = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        belt: document.getElementById('belt').value,
-        message: document.getElementById('message').value,
-        submittedAt: new Date().toISOString()
-    };
-    
- 
-    let submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
-    
-
-    submissions.push(submission);
-    
-
-    localStorage.setItem('formSubmissions', JSON.stringify(submissions));
-    
-
-    localStorage.removeItem('contactFormData');
-    
-   
-    alert('Thank you! Your message has been submitted successfully.');
-    
-  
-    document.getElementById('contactForm').reset();
-    
-   
-    console.log('Form submitted and saved to localStorage');
-    console.log('Total submissions:', submissions.length);
-}
-
-function getAllSubmissions() {
-    const submissions = localStorage.getItem('formSubmissions');
-    return submissions ? JSON.parse(submissions) : [];
-}
-
-function clearAllSubmissions() {
-    localStorage.removeItem('formSubmissions');
-    console.log('All submissions cleared from localStorage');
-}
-
+});
 const formsDatabase = {
     shared: {
         white: [
@@ -732,45 +692,13 @@ function getFormsForBelt(federation, belt) {
 }
 
 
-document.getElementById('searchInput').addEventListener('input', function(e) {
-    searchQuery = e.target.value.toLowerCase();
-    displayForms();
-});
-
-
-var fedButtons = document.querySelectorAll('.fed-btn');
-for (var i = 0; i < fedButtons.length; i++) {
-    fedButtons[i].addEventListener('click', function() {
-        var allBtns = document.querySelectorAll('.fed-btn');
-        for (var j = 0; j < allBtns.length; j++) {
-            allBtns[j].classList.remove('active');
-        }
-        
-        this.classList.add('active');
-        currentFederation = this.dataset.fed;
-        displayForms();
-    });
-}
-
-
-var beltButtons = document.querySelectorAll('.belt-btn');
-for (var i = 0; i < beltButtons.length; i++) {
-    beltButtons[i].addEventListener('click', function() {
-        var allBtns = document.querySelectorAll('.belt-btn');
-        for (var j = 0; j < allBtns.length; j++) {
-            allBtns[j].classList.remove('active');
-        }
-        
-        this.classList.add('active');
-        currentBelt = this.dataset.belt;
-        displayForms();
-    });
-}
-
-
 function displayForms() {
+
     var formsGrid = document.getElementById('formsGrid');
+    if (!formsGrid) return; 
+
     var forms = [];
+
 
     if (searchQuery) {
        
@@ -941,9 +869,6 @@ function renderVideoSection(videoUrl, targetElement) {
         `;
     } 
 }
-
-
-displayForms();
 
 function initLazyLoading() {
     const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
