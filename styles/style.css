@@ -1,0 +1,969 @@
+:root {
+  --color-primary: #005461;
+  --color-secondary: #018790;
+  --color-accent: #00B7B5;
+  --color-background: #F4F4F4;
+
+  --color-text-main: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-text-grey: #333;
+
+  --color-accent-light: #96cecd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.logo {
+  color: var(--color-text-light);
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  z-index: 1001;
+}
+
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--color-accent-light);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  background-color: var(--color-text-light);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-image: url("../images/taekwondo-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.lazy-bg {
+  background-color: var(--color-primary);  /* Shows while loading */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease-in-out;  /* Smooth fade-in */
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+  font-weight: 700;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.hero p {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  margin-bottom: 3rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-btn {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.about {
+  padding: 4rem 2rem;
+  background-color: var(--color-primary);
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: large;
+}
+
+
+.benefit-header {
+  text-align: center;
+  padding-top: 70px;
+  margin-bottom: 20px;
+}
+
+.benefit-header h2 {
+  color: #0d5f6f;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.benefits-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 25px;
+}
+
+.benefits-card {
+  background: white;
+  border-radius: 12px;
+  padding: 35px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.benefits-card h2 {
+  color: #0d5f6f;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.benefits-card p {
+  color: #4a5568;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.contact-container {
+  max-width: 600px;
+}
+
+.contact-section h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text-grey);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-secondary);
+}
+
+
+.taekwondo-forms-title {
+  color: var(--color-primary);
+  text-align: center;
+  padding: 50px;
+  font-size: 50px;
+}
+
+.filter-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+  border-bottom: 3px solid #e9ecef;
+}
+
+.filter-section .filter-group:nth-child(3) {
+  grid-row: 1 / span 2;
+}
+
+.filter-group {
+  background: var(--color-text-light);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group h3 {
+  margin-bottom: 15px;
+  color: var(--color-primary);
+  font-size: 1.2em;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 45px 15px 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: all 0.3s;
+  background: var(--color-text-light);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+.belt-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.belt-btn {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.belt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.belt-btn.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.federation-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.fed-btn {
+  flex: 1;
+  padding: 10px;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  background: var(--color-text-light);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s;
+  color: var(--color-primary);
+}
+
+.fed-btn.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.card-top h3 {
+  color: var(--color-primary);
+  font-size: 1.5em;
+  margin: 0;
+  flex: 1;
+}
+
+.fed-badge {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.korean {
+  color: var(--color-text-grey);
+  font-size: 15px;
+}
+
+.meaning {
+  color: var(--color-text-grey);
+  font-size: 15px;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.card-stats {
+  display: flex;
+  gap: 20px;
+  padding: 12px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 16px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.card-stats strong {
+  color: var(--color-primary);
+}
+
+.view-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: var(--color-secondary);
+}
+
+.card-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.detail-content {
+  color: #333;
+  line-height: 1.6;
+}
+
+.history {
+  margin-bottom: 16px;
+}
+
+.info-line {
+  margin: 8px 0;
+  font-size: 0.9em;
+}
+
+.info-line strong {
+  color: var(--color-primary);
+}
+
+.youtube-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  width: 100%;
+  justify-content: center;
+}
+
+.youtube-btn:hover {
+  background: #cc0000;
+}
+
+
+.history-hero-section {
+  color: var(--color-primary);
+  padding-top: 70px;
+  text-align: center;
+}
+
+.history-section {
+  padding: 2rem;
+  margin: 10px 30px;
+  border-radius: 20px;
+}
+
+.history-section .history-header-title {
+  color: var(--color-background);
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 33px;
+}
+
+.timeline-container {
+  padding: 10px;
+}
+
+.timeline-content {
+  padding: 30px 35px;
+  border: var(--color-primary) 2px solid;
+  border-radius: 20px;
+  margin: 20px 0px;
+}
+
+.history-section h2 {
+  color: var(--color-primary);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.history-section p {
+  color: var(--color-text-grey);
+}
+
+.timeline-date {
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  border-radius: 50px;
+  padding: 5px 20px;
+}
+
+
+
+footer {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+
+  .hamburger {
+    display: flex;
+    order: 2;
+  }
+
+  
+  .logo {
+    order: 1;
+  }
+
+  
+  nav {
+    order: 3;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--color-primary);
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  nav a {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    transition: all 0.2s ease;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav a:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding-left: 2.5rem;
+  }
+
+  .benefits-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .filter-section .filter-group:nth-child(3) {
+    grid-row: auto;
+  }
+
+  .forms-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding: 20px;
+  }
+
+  .taekwondo-forms-title {
+    font-size: 40px;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hamburger-line {
+    width: 25px;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding: 3rem 1.5rem;
+  }
+
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .benefit-header {
+    padding-top: 40px;
+  }
+
+  .benefit-header h2 {
+    font-size: 2rem;
+  }
+
+  .benefits-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .benefits-card {
+    padding: 25px 20px;
+  }
+
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .taekwondo-forms-title {
+    font-size: 32px;
+    padding: 20px 15px;
+  }
+
+  .filter-group {
+    padding: 15px;
+  }
+
+  .belt-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .belt-btn {
+    padding: 10px 8px;
+    font-size: 0.9em;
+  }
+
+  .federation-buttons {
+    gap: 10px;
+  }
+
+  .fed-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .forms-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+
+  .card-top h3 {
+    font-size: 1.3em;
+  }
+
+  .card-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .history-hero-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .history-container {
+    padding: 0 0.5rem;
+  }
+
+  .history-section {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+  }
+
+  .history-section .history-header-title {
+    padding: 0.75rem 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-container {
+    padding: 0.5rem;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+    border-radius: 15px;
+  }
+
+  .timeline-content h2 {
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .timeline-date {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.875rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .hamburger {
+    padding: 6px;
+  }
+
+  .hamburger-line {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  nav a {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover {
+    padding-left: 2rem;
+  }
+
+  .hero {
+    min-height: 350px;
+    padding: 2rem 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .benefit-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .benefits-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .benefits-card p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+  }
+
+  .taekwondo-forms-title {
+    font-size: 28px;
+    padding: 15px 10px;
+  }
+
+  .search-input {
+    padding: 12px 40px 12px 12px;
+    font-size: 0.95em;
+  }
+
+  .belt-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .federation-buttons {
+    flex-direction: column;
+  }
+
+  .form-card {
+    padding: 16px;
+  }
+
+  .card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fed-badge {
+    align-self: flex-start;
+  }
+
+  .history-hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .history-hero-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .history-container {
+    padding: 0;
+  }
+
+  .history-section {
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+    border-radius: 12px;
+  }
+
+  .history-section .history-header-title {
+    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-container {
+    padding: 0;
+  }
+
+  .timeline-content {
+    padding: 1.25rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    border-width: 2px;
+  }
+
+  .timeline-content h2 {
+    font-size: 1.15rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .timeline-date {
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .history-hero-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .history-section {
+    margin: 0.75rem 0.25rem;
+    padding: 0.75rem;
+  }
+
+  .timeline-content {
+    padding: 1rem;
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+}

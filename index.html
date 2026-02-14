@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chin Xu Yi">
+    <meta name="description" content="Home Page for TulLearn Webpage">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        
+        <div class="logo">TulLearn</div>
+        
+       
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+       
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="forms.html">Forms</a>
+        </nav>
+    </header>
+
+    <div>
+        <section class="hero lazy-bg" data-bg="images/taekwondo-hero.jpg">
+            <div class="hero-content">
+                <h1>Welcome to TulLearn</h1>
+                <p>Your journey to mastering Taekwondo starts here.</p>
+                <a href="forms.html" class="hero-btn">Get Started</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about-content">
+                <h2>About TulLearn</h2>
+                <br>
+                <p>TulLearn is designed for ITF and GTF Taekwondo learners to study Tuls, understand their meaning, history, techniques, and movements.</p>
+            </div>
+        </section>
+
+        
+        <div class="benefit-header">
+            <h2>Benefits of Learning Tuls</h2>
+            </div>
+            <br>
+            
+            <div class="benefits-container">
+                <div class="benefits-card">
+                    <h2>Technique Perfection</h2>
+                    <p>Master fundamental stances, blocks, punches, and kicks through systematic practice of traditional patterns.</p>
+                </div>
+            
+
+            <div class="benefits-card">
+                    <h2>Mental Discipline</h2>
+                    <p>Develop focus, memory, and mental fortitude through the precise execution of complex movement sequences.</p>
+                </div>
+            
+
+            <div class="benefits-card">
+                    <h2>Cultural Heritage</h2>
+                    <p>Connect with Korean history and philosophy embodied in each form's name, meaning, and movements.</p>
+                </div>
+            
+
+            <div class="benefits-card">
+                    <h2>Physical Power</h2>
+                    <p>Build strength, speed, balance, and coordination through dynamic movement patterns and breathing control.</p>
+                </div>
+           
+
+            <div class="benefits-card">
+                    <h2>Self-Defense Skills</h2>
+                    <p>Learn practical applications of techniques against multiple opponents in various scenarios.</p>
+                </div>
+            
+
+            <div class="benefits-card">
+                    <h2>Belt Progression</h2>
+                    <p>Progress through colored belts to black belt by mastering required forms at each level.</p>
+                </div>
+            
+        </div>
+    </div>
+
+     <section class="contact-section">
+        <div class="container contact-container">
+            <h2>Contact Us</h2>
+            
+            <form id="contactForm" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="belt">Current Belt Level</label>
+                    <select id="belt" name="belt">
+                        <option value="">Select your belt</option>
+                        <option value="white">White Belt</option>
+                        <option value="yellow">Yellow Belt</option>
+                        <option value="green">Green Belt</option>
+                        <option value="blue">Blue Belt</option>
+                        <option value="red">Red Belt</option>
+                        <option value="black">Black Belt</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" 
+                              name="message" 
+                              required 
+                              rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+       
+    </main>
+
+    <footer>
+    <p>&copy;2026 TulLearn</p>
+    </footer>
+
+    
+</body>
+
+</html>
